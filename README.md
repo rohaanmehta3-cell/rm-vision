@@ -1,34 +1,41 @@
 # RM Investment Co
 
-**Building an investment research platform for the AI era.**
+**Building for a world where every investment thesis is continuously tested.**
 
-The vision is to give a small team the research depth and operating discipline of a much larger organisation—with people accountable for the decisions.
+Markets move faster than any team can read. AI could change what a small investment team is capable of by giving it the reach to follow more companies, the capacity to test more ideas, and the memory to learn from every decision.
 
-We’re bringing specialist analysis, structured evaluation and portfolio oversight into one coherent system. The ambition is to move from scattered information to a clear view of what matters, why it matters and what deserves closer attention.
+We’re building toward an investment and trading platform that connects research, risk and execution in one feedback loop. A thesis should carry its evidence, its strongest counterargument and the conditions that would invalidate it. When those conditions change, the team should be able to see what changed, which positions are exposed and whether the original decision still holds.
 
-## What we’re building
+## What becomes possible
 
-A research environment where AI helps explore ideas, challenge assumptions and organise evidence. Human judgement sets the direction and makes the decisions.
+- **Investing becomes continuous.** A new filing, earnings call or market move can prompt a review of the specific assumptions it affects. Over time, a team can maintain more live theses and revisit them as evidence changes.
+- **Trading becomes a testable process.** A signal can be replayed against historical data, stressed across market regimes and evaluated after costs. Live fills and slippage can then show where the strategy behaves differently from the test.
+- **Portfolio risk becomes part of every decision.** Before a trade, the team can see what it adds to existing exposures, where liquidity could constrain an exit and how losses might compound under stress.
+- **Decisions become a research asset.** With a record of what the team knew and expected at the time, it can distinguish a sound decision with a bad outcome from a flawed process that happened to work.
 
-The engineering is as important as the analysis: dependable reporting, traceable work and explicit controls are part of the foundation.
+## How the loop works
 
-## Architecture, at a glance
+The diagram shows the target workflow. People own investment decisions and approve trades. AI helps gather evidence, challenge assumptions and monitor what changes.
 
-The platform brings together four broad responsibilities:
+```mermaid
+flowchart TD
+    A["Market data, filings and news"] --> B["AI-assisted research and evidence gathering"]
+    B --> C["Thesis or signal with supporting evidence"]
+    C --> D["Challenge assumptions and test downside"]
+    D --> E["Check portfolio exposure, liquidity and trade costs"]
+    E --> F{"Human decision"}
+    F -->|"Defer or decline"| G["Record rationale and review triggers"]
+    F -->|"Approve"| H["Execute within approved limits"]
+    H --> I["Monitor exposures, fills and outcomes"]
+    G --> J["Review decisions as evidence changes"]
+    I --> J
+    J --> B
+```
 
-- **Research:** turn incoming information into useful questions and evidence.
-- **Analysis:** examine ideas from complementary perspectives.
-- **Review:** bring findings together for human judgement.
-- **Oversight:** support reporting, monitoring and learning over time.
+## Where we are today
 
-This is a view of the system’s responsibilities. The implementation stays private.
+The project is in development and review. The current focus is the research and oversight foundation, including specialist analysis, traceable evidence, dependable reporting and explicit controls. The workflow above describes the direction of the build. Implementation details stay private.
 
-## Where this is going
+Questions about the vision or architecture are welcome through [GitHub Issues](https://github.com/rohaanmehta3-cell/rm-vision/issues).
 
-A more thoughtful way to build investment conviction: broader analytical reach, a clearer record of reasoning and greater discipline from question to decision.
-
-Currently in development and review.
-
-**Curious about the build?** Open a discussion through an [issue](https://github.com/rohaanmehta3-cell/rm-vision/issues) or ask Rohaan about the architecture, engineering choices and lessons learned. There’s more to the story.
-
-*This page is a project overview, not an investment offering or performance claim.*
+*This project overview makes no performance claims and does not constitute an investment offering.*
