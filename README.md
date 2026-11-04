@@ -36,21 +36,55 @@ We would evaluate each mandate against its own benchmark and constraints, then j
 
 ## How the loop works
 
-The diagram shows the target workflow. People own investment decisions and approve trades. AI helps gather evidence, challenge assumptions and monitor what changes.
+The diagram shows the target workflow. Training includes refining research playbooks and, where applicable, fitting quantitative signals. Held-out tests and shadow portfolios inform initial risk budgets. Live results and risk triggers feed ongoing allocation reviews. People own allocation decisions and approve trades.
 
 ```mermaid
 flowchart TD
-    A["Market data, filings and news"] --> B["AI-assisted research and evidence gathering"]
-    B --> C["PM bench proposes ideas by mandate"]
-    C --> D["Harness checks evidence and tests assumptions"]
-    D --> E["Harness compares proposals and checks portfolio limits"]
-    E --> F{"Human decision"}
-    F -->|"Defer or decline"| G["Record rationale and review triggers"]
-    F -->|"Approve"| H["Execute within approved limits"]
-    H --> I["Monitor exposures, fills and outcomes"]
-    G --> J["Review decisions as evidence changes"]
-    I --> J
-    J --> B
+    DATA["Market data, filings, news and portfolio state"]
+
+    subgraph BENCH["Specialist PM bench"]
+        direction LR
+        MAC["Macro"]
+        FUND["Fundamental equities"]
+        QUANT["Systematic quant"]
+        EVENT["Event-driven"]
+    end
+
+    subgraph LAB["Training and qualification"]
+        TRAIN["Refine research playbooks and fit signals where applicable"]
+        TEST["Test on held-out periods and stress across regimes"]
+        SHADOW["Run a shadow portfolio and measure costs and capacity"]
+        READY["Build a qualification record for each mandate"]
+        TRAIN --> TEST --> SHADOW --> READY
+    end
+
+    subgraph HARNESS["Shared investment harness"]
+        IDEAS["Standardize proposals, evidence, sizing and exit criteria"]
+        RISK["Check limits, liquidity and overlapping exposures"]
+        SCORE["Compare mandate performance after costs and contribution to portfolio risk"]
+        IDEAS --> RISK --> SCORE
+    end
+
+    subgraph ALLOC["Ongoing capital allocation"]
+        REVIEW["Review proposed positions and mandate risk budgets"]
+        DECIDE{"Human allocation decision"}
+        CHANGE["Start, add, maintain, reduce or pause risk"]
+        EXEC["Execute approved orders within limits"]
+        REVIEW --> DECIDE --> CHANGE --> EXEC
+    end
+
+    LIVE["Monitor fills, exposures, drawdowns and thesis changes"]
+    RECORD["Attribute outcomes and log failed assumptions"]
+
+    DATA --> BENCH
+    BENCH --> TRAIN
+    BENCH --> IDEAS
+    READY --> SCORE
+    SCORE --> REVIEW
+    EXEC --> LIVE --> RECORD
+    LIVE -->|"Scheduled reviews and limit breaches"| REVIEW
+    RECORD -->|"Update mandate scorecards"| SCORE
+    RECORD -->|"Refine and revalidate"| TRAIN
 ```
 
 ## Where we are today
