@@ -40,7 +40,9 @@ We would evaluate each mandate against its own benchmark and constraints, then j
 
 The diagram shows the target workflow. Training includes refining research playbooks and, where applicable, fitting quantitative signals. Held-out tests and shadow portfolios inform initial risk budgets. Live results and risk triggers feed ongoing allocation reviews. People own allocation decisions and approve trades.
 
-![Investment workflow from the specialist PM bench through qualification, the shared harness, human capital allocation, and live feedback](docs/investment-workflow.svg)
+We’re considering a shared **econometrics research agent** that scans incoming data in the lake for candidate signals. It would log each hypothesis, the data available at the time, the expected holding period and the proposed test. PMs would review candidates before qualification, which would check for look-ahead bias, account for repeated testing, and measure whether the signal holds up out of sample and after estimated costs. Candidates that pass could progress to a shadow portfolio. People would still approve any live risk.
+
+![Investment workflow from the data lake and proposed econometrics research agent through the specialist PM bench through qualification, the shared harness, human capital allocation, and live feedback](docs/investment-workflow.svg)
 
 ## Worked example
 
