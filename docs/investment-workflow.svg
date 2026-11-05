@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 814" width="560" height="814" role="img" aria-labelledby="title desc">
+<title id="title">Investment workflow</title><desc id="desc">Market inputs feed the four specialist PM mandates. Qualification and live proposals inform the shared harness. Humans allocate risk and approve execution. Live results feed back into training and allocation review.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#517891"/></marker></defs>
+<rect width="560" height="814" rx="18" fill="#f4f8fb"/>
+<text x="24" y="44" font-family="Arial,sans-serif" font-size="27" font-weight="bold" fill="#132d40">Investment workflow</text>
+<g fill="none" stroke="#517891" stroke-width="2" marker-end="url(#arrow)">
+<path d="M245 150V171"/>
+<path d="M245 274V297"/>
+<path d="M245 400V423"/>
+<path d="M245 526V549"/>
+<path d="M245 652V675"/>
+<path d="M466 224H493V476H469"/>
+<path d="M466 739H526V351H469"/>
+<path d="M526 478H469"/>
+<path d="M526 603H469"/>
+</g>
+<g font-family="Arial,sans-serif">
+<g transform="translate(24 74)"><rect width="442" height="76" rx="12" fill="#ffffff" stroke="#a5bac8"/><text x="18" y="30" font-size="22" font-weight="bold" fill="#132d40">Market and portfolio inputs</text><text x="18" y="55" font-size="17" fill="#28495d">Market data, filings, news and portfolio state</text></g>
+<g transform="translate(24 174)"><rect width="442" height="100" rx="12" fill="#ffffff" stroke="#a5bac8"/><text x="18" y="30" font-size="22" font-weight="bold" fill="#132d40">Specialist PM bench</text><text x="18" y="55" font-size="17" fill="#28495d">Macro · Fundamental equities</text><text x="18" y="78" font-size="17" fill="#28495d">Systematic quant · Event-driven</text></g>
+<g transform="translate(24 300)"><rect width="442" height="100" rx="12" fill="#ffffff" stroke="#a5bac8"/><text x="18" y="30" font-size="22" font-weight="bold" fill="#132d40">Training and qualification</text><text x="18" y="55" font-size="17" fill="#28495d">Refine playbooks and fit signals where applicable</text><text x="18" y="78" font-size="17" fill="#28495d">Test across regimes and run shadow portfolios</text></g>
+<g transform="translate(24 426)"><rect width="442" height="100" rx="12" fill="#ffffff" stroke="#a5bac8"/><text x="18" y="30" font-size="22" font-weight="bold" fill="#132d40">Shared investment harness</text><text x="18" y="55" font-size="17" fill="#28495d">Compare proposals, evidence and net performance</text><text x="18" y="78" font-size="17" fill="#28495d">Check liquidity, limits and shared exposures</text></g>
+<g transform="translate(24 552)"><rect width="442" height="100" rx="12" fill="#d7eee8" stroke="#a5bac8"/><text x="18" y="30" font-size="22" font-weight="bold" fill="#132d40">Human capital allocation</text><text x="18" y="55" font-size="17" fill="#28495d">Start, add, maintain, reduce or pause risk</text><text x="18" y="78" font-size="17" fill="#28495d">Execute approved orders within limits</text></g>
+<g transform="translate(24 678)"><rect width="442" height="100" rx="12" fill="#ffffff" stroke="#a5bac8"/><text x="18" y="30" font-size="22" font-weight="bold" fill="#132d40">Live monitoring and attribution</text><text x="18" y="55" font-size="17" fill="#28495d">Track fills, exposures, drawdowns and theses</text><text x="18" y="78" font-size="17" fill="#28495d">Update scorecards and revisit failed assumptions</text></g>
+<text transform="translate(489 425) rotate(-90)" font-size="13" fill="#28495d">Live proposals</text>
+<text transform="translate(544 730) rotate(-90)" font-size="14" fill="#28495d">Feedback and review triggers</text>
+</g></svg>
