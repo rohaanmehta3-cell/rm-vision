@@ -42,7 +42,56 @@ The diagram shows the target workflow. Training includes refining research playb
 
 We’re considering a shared **econometrics research agent** that scans incoming data in the lake for candidate signals. It would log each hypothesis, the data available at the time, the expected holding period and the proposed test. PMs would review candidates before qualification, which would check for look-ahead bias, account for repeated testing, and measure whether the signal holds up out of sample and after estimated costs. Candidates that pass could progress to a shadow portfolio. People would still approve any live risk.
 
-![Investment workflow from the specialist PM bench through qualification, the shared harness, human capital allocation, and live feedback](docs/investment-workflow.svg)
+[Open the simplified mobile diagram](docs/investment-workflow.svg)
+
+```mermaid
+flowchart TD
+    DATA["Market data, filings, news and portfolio state"]
+
+    subgraph BENCH["Specialist PM bench"]
+        direction LR
+        MAC["Macro"]
+        FUND["Fundamental equities"]
+        QUANT["Systematic quant"]
+        EVENT["Event-driven"]
+    end
+
+    subgraph LAB["Training and qualification"]
+        TRAIN["Refine research playbooks and fit signals where applicable"]
+        TEST["Test on held-out periods and stress across regimes"]
+        SHADOW["Run a shadow portfolio and measure costs and capacity"]
+        READY["Build a qualification record for each mandate"]
+        TRAIN --> TEST --> SHADOW --> READY
+    end
+
+    subgraph HARNESS["Shared investment harness"]
+        IDEAS["Standardize proposals, evidence, sizing and exit criteria"]
+        RISK["Check limits, liquidity and overlapping exposures"]
+        SCORE["Compare mandate performance after costs and contribution to portfolio risk"]
+        IDEAS --> RISK --> SCORE
+    end
+
+    subgraph ALLOC["Ongoing capital allocation"]
+        REVIEW["Review proposed positions and mandate risk budgets"]
+        DECIDE{"Human allocation decision"}
+        CHANGE["Start, add, maintain, reduce or pause risk"]
+        EXEC["Execute approved orders within limits"]
+        REVIEW --> DECIDE --> CHANGE --> EXEC
+    end
+
+    LIVE["Monitor fills, exposures, drawdowns and thesis changes"]
+    RECORD["Attribute outcomes and log failed assumptions"]
+
+    DATA --> BENCH
+    BENCH --> TRAIN
+    BENCH --> IDEAS
+    READY --> SCORE
+    SCORE --> REVIEW
+    EXEC --> LIVE --> RECORD
+    LIVE -->|"Scheduled reviews and limit breaches"| REVIEW
+    RECORD -->|"Update mandate scorecards"| SCORE
+    RECORD -->|"Refine and revalidate"| TRAIN
+```
 
 ## Worked example
 
