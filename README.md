@@ -1,4 +1,4 @@
-# RM Investment Co
+# Log n Investors
 
 **Building an AI-native investment platform where a small team can run a bench of specialist PMs, continuously test their ideas, and allocate risk as the evidence changes.**
 
